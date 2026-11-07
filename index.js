@@ -1,5 +1,6 @@
 
 const express = require("express");
+const cors = require("cors");
 
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
@@ -18,6 +19,7 @@ mongoose.connect("mongodb://127.0.0.1:27017/api_registro_login")
 
 // Creamos la aplicación utilizando Express.
 const app = express();
+app.use(cors());
 
 // Permitimos que la API reciba información en formato JSON.
 app.use(express.json());
